@@ -21,9 +21,13 @@ transformed parameters {
   real transformed_param_real_array[d_int];
 
   transformed_param_real_array <- linear_interpolation(d_real_array, d2_real_array, d3_real_array);
-  transformed_param_real_array <- linear_interpolation(p_real_array, d2_real_array, d3_real_array);
   transformed_param_real_array <- linear_interpolation(d_real_array, d2_real_array, p3_real_array);
-  transformed_param_real_array <- linear_interpolation(p_real_array, d2_real_array, p3_real_array);  
+  transformed_param_real_array <- linear_interpolation(d_real_array, p2_real_array, d3_real_array);
+  transformed_param_real_array <- linear_interpolation(d_real_array, p2_real_array, p3_real_array);
+  transformed_param_real_array <- linear_interpolation(p_real_array, d2_real_array, d3_real_array);
+  transformed_param_real_array <- linear_interpolation(p_real_array, d2_real_array, p3_real_array);
+  transformed_param_real_array <- linear_interpolation(p_real_array, p2_real_array, d3_real_array);
+  transformed_param_real_array <- linear_interpolation(p_real_array, p2_real_array, p3_real_array);
 }
 model {  
   y_p ~ normal(0,1);
